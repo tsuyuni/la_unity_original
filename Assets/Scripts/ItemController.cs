@@ -17,7 +17,8 @@ public class ItemController : MonoBehaviour
     }
 
     public void OnClickItem(){
-        BagController.possessingItems.Add(gameObject);
+        string itemName = gameObject.name;
+        GameController.cyberRoomItemFlags[itemName] = true;
         BagController.setItemImage();
         gameObject.SetActive(false);
     }

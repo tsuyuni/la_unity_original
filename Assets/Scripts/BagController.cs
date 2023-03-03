@@ -35,7 +35,6 @@ public class BagController : MonoBehaviour
             if(image.sprite == null){
                 image.sprite = staticSourseSprite;
                 image.color = new Color32(255,255,255,255);
-                Debug.Log("change");
                 break;
             }
         }
