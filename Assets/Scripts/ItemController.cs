@@ -5,33 +5,33 @@ using Fungus;
 
 public class ItemController : MonoBehaviour
 {
-    Dictionary<string,bool> flags;
+    public static string selectedItem;
     public Flowchart ResultLog = null;
+    public GameObject door;
     // Start is called before the first frame update
-    void Start()
-    {
-        flags = GameController.cyberRoomItemFlags;
+    void Start(){
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){ 
     }
 
     public void OnClickItem(){
-        string itemName = gameObject.name;
-        flags[itemName] = true;
-        BagController.setItemImage();
+        BagController.SetItemImage(gameObject.tag);
         gameObject.SetActive(false);
     }
 
     public void OnClickDoor(){
-        if(flags.ContainsKey("Key") && flags["Key"]){
-
+        if(selectedItem != null && selectedItem == "Key"){
+            OpenDoor();
             } else {
                 ResultLog.SendFungusMessage("DoorLocked");
             }
+    }
+
+    void OpenDoor(){
+        door.GetComponent<Animation>().Play();
+        Debug.Log("Open");
     }
 
 

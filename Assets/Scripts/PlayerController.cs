@@ -7,8 +7,7 @@ public class PlayerController : MonoBehaviour
     float speed = 3;
     public GameObject camera;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         
     }
 
@@ -33,22 +32,22 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKey(KeyCode.UpArrow)){
             if((camera.transform.localEulerAngles.x >= 345 || camera.transform.localEulerAngles.x <= 20)){
-                camera.transform.Rotate(-speed, 0, 0);
+                camera.transform.Rotate(-1, 0, 0);
             }
         }
 
         if(Input.GetKey(KeyCode.DownArrow)){
             if((camera.transform.localEulerAngles.x >= 340 || camera.transform.localEulerAngles.x <= 15)){
-                camera.transform.Rotate(speed, 0, 0);
+                camera.transform.Rotate(1, 0, 0);
             }
         }
 
         if(Input.GetKey(KeyCode.LeftArrow)){
-            gameObject.transform.Rotate(0, -speed, 0, Space.World);
+            gameObject.transform.Rotate(0, -1, 0, Space.World);
         }
 
         if(Input.GetKey(KeyCode.RightArrow)){
-            gameObject.transform.Rotate(0, speed, 0, Space.World);
+            gameObject.transform.Rotate(0, 1, 0, Space.World);
         }
 
 
